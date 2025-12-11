@@ -1,8 +1,7 @@
 public class Reward {
-    private String rewardId;
     private String rewardName;
-    private int levelRequirement; // Changed string to int for easier logic
-    private String rewardType;
+    private int levelRequirement;
+    private String rewardType; // e.g. "Badge", "Title"
     private boolean isUnlocked;
 
     public Reward(String name, int levelRequirement, String type) {
@@ -12,22 +11,21 @@ public class Reward {
         this.isUnlocked = false;
     }
 
-    public void unlock(User user) {
-        if (user.getLevel() >= this.levelRequirement) {
+    public boolean checkAndUnlock(User user) {
+        if (!isUnlocked && user.getLevel() >= this.levelRequirement) {
             this.isUnlocked = true;
-            System.out.println("Reward Unlocked: " + rewardName);
+            return true;
         }
+        return false;
     }
 
-    public void assignToUser(User user) {
-        if (isUnlocked) {
-            user.addReward(this);
-        }
-    }
-
-    public String displayReward() {
-        return isUnlocked ? rewardName + " (" + rewardType + ")" : "Locked Reward";
-    }
-    
     public String getRewardName() { return rewardName; }
+    public String getRewardType() { return rewardType; }
+    public int getLevelRequirement() { return levelRequirement; }
+    public boolean isUnlocked() { return isUnlocked; }
+
+    @Override
+    public String toString() {
+        return rewardName + " (" + rewardType + ")";
+    }
 }

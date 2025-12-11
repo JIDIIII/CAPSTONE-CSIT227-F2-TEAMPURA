@@ -14,16 +14,15 @@ public class Meal {
 
     public void calculateCalories() {
         // In a real app, this would sum ingredients.
-        // Here, we just assume the passed value is correct.
         System.out.println("Calories calculated: " + this.calories);
     }
 
     public void classifyMeal() {
-        // Simple Game Logic: > 800 calories is "Unhealthy" unless it's a cheat meal
-        if (this.calories > 800) {
-            this.isHealthy = false;
-        } else {
+        // Updated Logic: Healthy is between 300 and 700 calories inclusive
+        if (this.calories >= 300 && this.calories <= 700) {
             this.isHealthy = true;
+        } else {
+            this.isHealthy = false;
         }
     }
 

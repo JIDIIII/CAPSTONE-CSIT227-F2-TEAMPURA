@@ -1,28 +1,20 @@
 public class Penalty {
-    private String penaltyId;
-    private String penaltyType;
-    private int magnitude; // XP amount to deduct
-    private int durationHours;
+    private String reason;
+    private int xpDeduction;
 
-    public Penalty(String id, String type, int magnitude, int duration) {
-        this.penaltyId = id;
-        this.penaltyType = type;
-        this.magnitude = magnitude;
-        this.durationHours = duration;
+    public Penalty(String reason, int xpDeduction) {
+        this.reason = reason;
+        this.xpDeduction = xpDeduction;
     }
 
     public void applyTo(User user) {
-        System.out.println("Applying penalty: " + penaltyType + " (-" + magnitude + " XP)");
-        // In a full implementation: user.deductXP(magnitude);
+        int currentXp = user.getXp();
+        // Ensure XP doesn't go below 0
+        int finalXp = Math.max(0, currentXp - xpDeduction);
+        user.setXp(finalXp);
     }
 
-    public void revoke(User user) {
-        System.out.println("Penalty expired: " + penaltyType);
+    public String getMessage() {
+        return "PENALTY: " + reason + "\nLost " + xpDeduction + " XP (20%)";
     }
-
-    public String describe() {
-        return penaltyType + ": -" + magnitude + " XP for " + durationHours + " hours.";
-    }
-    
-    public int getMagnitude() { return magnitude; }
 }
