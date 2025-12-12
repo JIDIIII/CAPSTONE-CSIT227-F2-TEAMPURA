@@ -15,7 +15,7 @@ LevelUP – DETAILED SYSTEM DESCRIPTION
 
 LevelUp is a gamified fitness and wellness tracking system designed to motivate users through RPG-style progression, daily quests, automatic penalties, and reward unlocking. Inspired by progression systems similar to Solo Leveling, the platform turns real-life health habits into actionable “leveling” mechanics.
 
-The system encourages users to complete daily tasks—such as completing workouts, eating healthy meals, or hitting activity targets—to increase their XP, advance their level, and maintain streak bonuses. The central mechanic is the Daily Challenge, which must be completed every day to avoid penalties that reduce XP or apply temporary debuffs to the user’s account.
+The system encourages users to complete daily tasks—such as completing workouts, eating healthy meals, or hitting activity targets—to increase their XP, advance their level, and maintain streak bonuses. The central mechanic is the Daily Challenge, which must be completed every day to avoid penalties that reduce XP of the user.
 
 ⸻
 
@@ -34,9 +34,9 @@ Each user starts at Level 1 with baseline XP. Users earn experience by:
 
 •	Maintaining streaks
 
-As XP increases, the user levels up — unlocking new rewards, earning titles, and improving their account status.
+As XP increases, the user levels up — unlocking more tasks, earning higher XP, gaining titles, and improving their account status.
 
-Users who consistently fail daily challenges accumulate Penalty Points, decreasing performance in future XP gains or temporarily locking certain features.
+Users who consistently fail daily challenges accumulate Penalty Points, decreasing performance in future XP gains.
 
 ⸻
 
@@ -71,10 +71,6 @@ Automatically triggers a Penalty, such as:
 	•	XP deduction
 	
 	•	Streak reset
-	
-	•	Temporary decrease in XP gain multiplier
-	
-	•	Time-bound penalty (e.g., “−20% XP gain for 12 hours”)
 
 This mechanism promotes consistent daily engagement, similar to daily quests in RPG games.
 
@@ -132,7 +128,7 @@ Quests offer:
 	
 	•	Titles or account perks
 
-Failing a quest may trigger an optional penalty, depending on the quest type.
+Failing a quest will result in loss of XP.
 
 ⸻
 
@@ -144,11 +140,7 @@ Users receive rewards for completing milestones. Rewards may include:
 	
 	•	Titles
 	
-	•	Boosters (XP multiplier for 24 hours)
-	
 	•	Cosmetic achievements
-	
-	•	Unlockable features
 
 Rewards are stored in each user’s inventory once claimed. Some rewards unlock automatically upon reaching certain levels.
 
@@ -160,9 +152,9 @@ The system track how many consecutive days the user completes Daily Challenges.
 
 Each day the streak increases:
 
-	•	XP gain multiplier increases
+	•	Gain more XP
 	
-	•	Greater chance of unlocking special rewards
+	•	Greater chance of unlocking new titles
 
 Failing a daily challenge:
 
@@ -189,14 +181,8 @@ Possible penalties include:
 	•	XP deduction
 	
 	•	Streak reset
-	
-	•	Temporary debuffs (e.g., Reduced XP gain)
-	
-	•	Cooldown timers
-	
-	•	Increased difficulty of next Daily Challenge
 
-Penalties escalate the more often the user fails, emphasizing habit-building and responsibility.
+Penalties escalate XP deductions the more often the user fails, emphasizing habit-building and responsibility.
 
 ⸻
 
@@ -237,3 +223,4 @@ LevelUp provides a practical and innovative solution for:
 	•	Health data monitoring
 	
 	•	Motivation through gamification
+
